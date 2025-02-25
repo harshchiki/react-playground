@@ -111,3 +111,23 @@ root.render(
     <h1>This is another element</h1>
 )
 ```
+
+> main Element: The <main> HTML element represents the dominant content of the <body> of a document. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application. A document mustn't have more than one <main> element that doesn't have the hidden attribute specified.
+
+
+Before rendering JSX, React transforms JSX into JavaScript using a process called compilation. Here's what happens step by step:
+* JSX is not valid JavaScript, so React uses a compiler (like Babel) to convert JSX into standard JavaScript.
+* JSX gets converted into React.createElement() calls, which create React elements (virtual DOM nodes).
+* React constructs a virtual DOM tree based on these elements.
+* React reconciles the virtual DOM with the actual DOM by updating only the changed parts efficiently.
+Example Transformation:
+JSX Code:
+```
+const element = <h1>Hello, World!</h1>;
+```
+
+Transformed Code (without jsx)
+```
+const element = React.createElement('h1', null, 'Hello, World!');
+```
+This means JSX is just syntactic sugar for React.createElement(), which returns an object representation of the element.
