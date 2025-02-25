@@ -94,3 +94,20 @@ createRoot(document.getElementById("root))
     
 // (Note the class is specified as 'className' if writing in Declarative style)
 ```
+
+
+```
+/*
+Below code won't run.
+
+JSX expects single element at root level. It basically translates to createElement (of react) for each at the root level
+and thus a createElement()createElement() is syntax error.
+*/
+import { createElement } from "react"
+import { createRoot } from "react-dom/client"
+const root = createRoot(document.getElementById("root"))
+root.render(
+    <img src="/src/assets/react-logo.png" />
+    <h1>This is another element</h1>
+)
+```
