@@ -131,3 +131,62 @@ Transformed Code (without jsx)
 const element = React.createElement('h1', null, 'Hello, World!');
 ```
 This means JSX is just syntactic sugar for React.createElement(), which returns an object representation of the element.
+
+
+# Custom Components
+```
+// from
+root.render(
+    <main>
+        <img src="react-logo.png" width="40px" alt="React logo" />
+        <h1>Fun facts about React!</h1>
+        <ul>
+            <li>Was first release in 2013</li>
+            <li>Was originally created by Jordan Walke</li>
+            <li>Has well over 200K stars on GitHub</li>
+            <li>Is maintained by Meta</li>
+            <li>Powers thousands of enterprise apps, including mobile apps</li>
+        </ul>
+    </main>
+)
+
+// to
+
+function TComp() {
+    return (
+        <main>
+            <img src="react-logo.png" width="40px" alt="React logo" />
+            <h1>Fun facts about React!</h1>
+            <ul>
+                <li>Was first release in 2013</li>
+                <li>Was originally created by Jordan Walke</li>
+                <li>Has well over 200K stars on GitHub</li>
+                <li>Is maintained by Meta</li>
+                <li>Powers thousands of enterprise apps, including mobile apps</li>
+            </ul>
+        </main>
+    )
+}
+root.render(<TComp />)
+```
+
+## Imp
+```
+function TComp() {
+    return <main>
+        <h1>hellow</h1>
+        </main>
+}
+
+// is as good as
+function TComp() {
+    return ( // notice this "(" and thus the closing brace, if the opening tag is specified in the next line)
+        <main>
+            <h1>
+                hello
+            </h1>
+        </main>
+    )
+}
+```
+Also it is important for functions related to custom components, have their name begin with a capital letter.
