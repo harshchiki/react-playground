@@ -1,6 +1,15 @@
-import { createRoot } from "react-dom/client";
-const root = createRoot(document.getElementById("root"));
-const element = <main>
-    <img src="react-logo.png" alt="React Logo" />
-</main>;
-root.render(element);
+import { createRoot } from "react-dom/client"
+/**
+ * Challenge:
+ * 
+ * - Create an App component in a separate file.
+ *   Import it here and render it
+ * - Create a "components" folder and a Header component.
+ *   Render the Header inside the App component.
+ * - Follow the Travel Journal design to build the Header
+ *   for our page.
+ */
+import App from "./App"
+
+const root = createRoot(document.getElementById("root"))
+root.render(<App />)
